@@ -19,7 +19,6 @@ MODPROBE_CONFIG = "\
 "
 
 SYSCTL_CONFIG = "\
-    file://sysctl/99-grsec-debootstrap.conf \
     file://sysctl/90-citadel-sysctl.conf \
 "
 
@@ -107,10 +106,6 @@ do_install() {
     install -m 644 -T ${WORKDIR}/skel/profile ${D}${sysconfdir}/skel/.profile
     install -m 644 -T ${WORKDIR}/skel/bashrc ${D}${sysconfdir}/skel/.bashrc
     install -m 644 -T ${WORKDIR}/skel/vimrc ${D}${sysconfdir}/skel/.vimrc
-
-    # disable some pax and grsecurity features so that debootstrap will work
-    # this should be removed later
-    install -m 0644 ${WORKDIR}/sysctl/99-grsec-debootstrap.conf ${D}${libdir}/sysctl.d/
 
     install -m 0644 ${WORKDIR}/sysctl/90-citadel-sysctl.conf ${D}${libdir}/sysctl.d/
 
