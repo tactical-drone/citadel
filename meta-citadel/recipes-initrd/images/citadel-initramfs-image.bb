@@ -95,7 +95,11 @@ PACKAGE_INSTALL = "\
     kernel-module-wmi \
     kernel-module-xhci-plat-hcd \
     liberation-fonts \
-    util-linux \
+    util-linux-fsck \
+    util-linux-lsblk \
+    util-linux-losetup \
+    util-linux-mount \
+    util-linux-umount \
     plymouth \
 "
 
