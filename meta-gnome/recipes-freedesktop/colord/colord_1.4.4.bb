@@ -5,10 +5,11 @@ LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=b234ee4d69f5fce4486a80fdaf4a4263"
 
 SRC_URI = "https://www.freedesktop.org/software/colord/releases/colord-${PV}.tar.xz" 
-SRC_URI[md5sum] = "f032ecac927e9078c41fff97800441e8"
-SRC_URI[sha256sum] = "9a8e669ee1ea31632bee636cc57353f703c2ea9b64cd6e02bbaabe9a1e549df7"
+SRC_URI[md5sum] = "32c2709a6002d9ee750483aaed6379c8"
+SRC_URI[sha256sum] = "9a0fe80160bf88efddb582a9fc0169f56065276dc3882c47dddb9eecd048c0a5"
 
-inherit meson meson-exe-wrapper pkgconfig systemd useradd gettext gobject-introspection
+#inherit meson meson-exe-wrapper pkgconfig systemd useradd gettext gobject-introspection
+inherit python3native meson meson-exe-wrapper pkgconfig systemd useradd gettext gobject-introspection
 
 DEPENDS = "glib-2.0-native lcms libgusb libgudev polkit"
 EXTRA_OEMESON = "-Dargyllcms_sensor=false -Dman=false -Ddocs=false -Ddaemon_user=colord -Dbash_completion=false -Dtests=false --buildtype=release"
