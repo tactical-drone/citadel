@@ -10,7 +10,7 @@ SRC_URI[sha256sum] = "9c43d9f4bd30f4fea7f780d4e8b14f7589107c52e9cb6bd202bd0d1c20
 
 DEPENDS = "gtk+3 python3-pygobject intltool-native glib-2.0 clutter-1.0 libgee libxklavier glib-2.0-native xmlto-native python3-pygobject-native"
 
-PYTHON_CARIBOU = "${libdir}/python3.5/site-packages/caribou"
+PYTHON_CARIBOU = "${libdir}/python3.7/site-packages/caribou"
 FILES_${PN} += "\
     ${datadir}/dbus-1/services \
     ${datadir}/glib-2.0/schemas \
