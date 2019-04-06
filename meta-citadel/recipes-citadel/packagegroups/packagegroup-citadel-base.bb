@@ -23,7 +23,6 @@ RDEPENDS_${PN} = "\
     syslinux-extlinux \
     keymaps \
     kbd \
-    nnn \
     console-tools \
     coreutils \
     gzip \
