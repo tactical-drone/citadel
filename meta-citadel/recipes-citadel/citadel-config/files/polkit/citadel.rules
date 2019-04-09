@@ -1,5 +1,6 @@
 polkit.addRule(function(action, subject) {
     if ((action.id == "org.freedesktop.NetworkManager.settings.modify.system" ||
+        action.id == "org.freedesktop.machine1.shell" ||
         action.id == "org.freedesktop.machine1.host-open-pty") &&
         subject.local && subject.isInGroup("citadel")) {
             return polkit.Result.YES;
