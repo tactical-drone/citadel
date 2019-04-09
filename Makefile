@@ -55,7 +55,7 @@ kernel-test: ## Boot kernel with Qemu ('ctrl-a x' to exit qemu)
 	@scripts/qemu-boot kernel
 
 install-build-deps:
-	sudo apt install --no-install-recommends build-essential python bzip2 cpio chrpath diffstat file texinfo inkscape libgmp-dev libmpc-dev libelf-dev gawk wget
+	sudo apt install --no-install-recommends build-essential python bzip2 cpio chrpath diffstat file texinfo inkscape libgmp-dev libmpc-dev libelf-dev gawk wget debootstrap
 
 $(REALMFS_IMAGE):
 	@mkdir -p build/realmfs
