@@ -1,5 +1,5 @@
 # Append recipe from meta-openembedded/meta-networking
-PACKAGECONFIG = "nss dhclient systemd wifi glib"
+PACKAGECONFIG = "gnutls dhclient systemd wifi glib"
 EXTRA_OECONF_remove = "--with-nmtui=yes"
 EXTRA_OECONF += "--disable-ovs --with-nmtui=no"
 
