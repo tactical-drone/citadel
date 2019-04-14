@@ -10,7 +10,7 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit deploy
 require citadel-image.inc
 
-KERNEL_CMDLINE = "root=/dev/mapper/rootfs citadel.verbose fstab=no luks=no splash"
+KERNEL_CMDLINE = "root=/dev/mapper/rootfs citadel.verbose intel_iommu=off fstab=no luks=no splash"
 
 do_rootfs() {
     install_efi_files
