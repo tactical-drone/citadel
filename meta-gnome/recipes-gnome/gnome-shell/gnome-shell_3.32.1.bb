@@ -5,8 +5,8 @@ GNOMEBASEBUILDCLASS = "meson"
 
 inherit gnomebase gobject-introspection gettext
 
-SRC_URI[archive.md5sum] = "f0bc523fec6b58fa6ba762e6317334b1"
-SRC_URI[archive.sha256sum] = "22f9833ae7d3fb8d5f817c75c79288724ff10d5deb1c2e1c1d0bbab135d753b6"
+SRC_URI[archive.md5sum] = "059529c91a3d84e6542f662be47a657f"
+SRC_URI[archive.sha256sum] = "0874ded4498e960b264baa54b6407a5a75dac54fc5b7cd60db91133e9c0260dd"
 
 SRC_URI = "${GNOME_MIRROR}/${GNOMEBN}/${@gnome_verdir("${PV}")}/${GNOMEBN}-${PV}.tar.${GNOME_COMPRESS_TYPE};name=archive \
            file://0001-Disabled-calendar-events-from-user-session.patch \
