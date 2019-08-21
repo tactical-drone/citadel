@@ -5,12 +5,12 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
 inherit kernel 
 
-SRC_URI = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.0.6.tar.xz\
+SRC_URI = "https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.2.9.tar.xz\
     file://0117-WireGuard.patch \
     file://defconfig \
 "
-SRC_URI[md5sum] = "301cf9a7706c750ca76b322eb98bfe15"
-SRC_URI[sha256sum] = "9e4a9a8d8a07b7fc696d734f6e822cf43c45cecfe3ab4c089b349bfc701ff413"
+SRC_URI[md5sum] = "d7162b4421327c756b1d548204fd8fb1"
+SRC_URI[sha256sum] = "b6f02a4b306ca5cd314d72615bfc2650166969613135da202630e6c4e1b5d4e6"
 
 LINUX_VERSION ?= "${PV}"
 S = "${WORKDIR}/linux-${LINUX_VERSION}"
