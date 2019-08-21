@@ -34,14 +34,11 @@ addtask rootfs after do_configure before do_build
 install_efi_files() {
     install -d ${IMAGE_ROOTFS}/EFI/BOOT
     install ${DEPLOY_DIR_IMAGE}/systemd-bootx64.efi -T ${IMAGE_ROOTFS}/EFI/BOOT/bootx64.efi
-    install ${DEPLOY_DIR_IMAGE}/bzImage ${IMAGE_ROOTFS}
+    install ${DEPLOY_DIR_IMAGE}/bzImage ${IMAGE_ROOTFS}/bzImage-${CITADEL_KERNEL_VERSION}
 
     install -d ${IMAGE_ROOTFS}/loader/entries
     make_loader_conf > ${IMAGE_ROOTFS}/loader/loader.conf
     make_live_conf > ${IMAGE_ROOTFS}/loader/entries/live.conf
-
-    install -d ${IMAGE_ROOTFS}/misc
-    make_citadel_conf > ${IMAGE_ROOTFS}/misc/citadel.conf
 }
 
 SYSLINUX_MODULES = "ldlinux.c32 menu.c32 libutil.c32 gptmbr.bin"
@@ -69,22 +66,17 @@ make_loader_conf() {
 
 make_install_conf() {
     echo "title Install Subgraph OS (Citadel)"
-    echo "linux /bzImage"
+    echo "linux /bzImage-${CITADEL_KERNEL_VERSION}"
     echo "options ${KERNEL_CMDLINE} citadel.install"
 }
 
 make_live_conf() {
     echo "title Run Live Subgraph OS (Citadel)"
-    echo "linux /bzImage"
+    echo "linux /bzImage-${CITADEL_KERNEL_VERSION}"
     echo "options ${KERNEL_CMDLINE} citadel.live"
 }
 
 CITADEL_KERNEL_CMDLINE = "add_efi_memmap intel_iommu=off cryptomgr.notests rcupdate.rcu_expedited=1 rcu_nocbs=0-64 tsc=reliable no_timer_check noreplace-smp i915.fastboot=1 quiet splash"
-make_citadel_conf() {
-    echo "title Subgraph OS (Citadel)"
-    echo "linux /bzImage"
-    echo "options ${CITADEL_KERNEL_CMDLINE}"
-}
 
 make_syslinux_conf() {
 cat << EOF
@@ -97,7 +89,7 @@ DEFAULT subgraph
 
 LABEL subgraph
         MENU LABEL Subgraph OS
-	LINUX ../bzImage
+	LINUX ../bzImage-${CITADEL_KERNEL_VERSION}
 	APPEND ${KERNEL_CMDLINE} citadel.live
 EOF
 }
