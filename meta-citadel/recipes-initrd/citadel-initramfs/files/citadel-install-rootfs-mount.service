@@ -12,7 +12,7 @@ ConditionKernelCommandLine=|citadel.live
 # Only run if root is set to this exact path
 ConditionKernelCommandLine=root=/dev/mapper/rootfs
 
-Wants=citadel-rootfs-setup.service citadel-install-rootfs-setup.service
+Wants=citadel-rootfs-setup.service
 
 Requires=systemd-sysctl.service
 After=systemd-sysctl.service
