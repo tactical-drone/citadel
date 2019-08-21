@@ -94,7 +94,7 @@ crate://crates.io/serde_derive/1.0.89 \
 crate://crates.io/sha2/0.8.0 \
 crate://crates.io/signal-hook/0.1.8 \
 crate://crates.io/smallvec/0.6.9 \
-crate://crates.io/sodiumoxide/0.2.1 \
+crate://crates.io/sodiumoxide/0.2.2 \
 crate://crates.io/spin/0.5.0 \
 crate://crates.io/stable_deref_trait/1.1.1 \
 crate://crates.io/strsim/0.7.0 \
@@ -128,6 +128,8 @@ crate://crates.io/xi-unicode/0.1.0 \
 crate://crates.io/zip/0.5.1 \
 "
 
+export SODIUM_USE_PKG_CONFIG = "1"
+
 DEPENDS = "libsodium openssl dbus"
 BBCLASSEXTEND = "native"
 PACKAGES =+ "${PN}-realms ${PN}-tools ${PN}-mkimage"
@@ -143,6 +145,7 @@ FILES_${PN} = "\
     ${libexecdir}/citadel-desktop-sync \
     ${bindir}/citadel-image \
     ${bindir}/citadel-realmfs \
+    ${bindir}/citadel-update \
     ${systemd_system_unitdir} \
 "
 
@@ -175,6 +178,7 @@ do_install() {
     ln ${D}${libexecdir}/citadel-tool ${D}${bindir}/citadel-image
     ln ${D}${libexecdir}/citadel-tool ${D}${bindir}/citadel-mkimage
     ln ${D}${libexecdir}/citadel-tool ${D}${bindir}/citadel-realmfs
+    ln ${D}${libexecdir}/citadel-tool ${D}${bindir}/citadel-update
 }
 
 #
