@@ -7,9 +7,9 @@ inherit cargo systemd
 #
 # Update this when changes are pushed to github
 #
-SRCREV = "d4a3949d23b839ec7e1f977ceee2173a46d1014d"
+SRCREV = "3820bcc08f98d5e83132ccf251d6ef543579dcf2"
 
-GIT_URI = "git://github.com/subgraph/citadel-tools.git;protocol=https"
+GIT_URI = "git://github.com/brl/citadel-tools.git;protocol=https"
 
 # If Cargo.lock changes in citadel-tools, this needs to be updated.
 # cargo bitbake does not support workspaces so as a workaround first
