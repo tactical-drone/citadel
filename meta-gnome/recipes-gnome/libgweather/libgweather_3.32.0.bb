@@ -8,6 +8,8 @@ SRC_URI[archive.sha256sum] = "de9a2b392a8b27e012ed80bb9c950085692cd8e898c367c092
 
 DEPENDS = "gtk+3 libxml2 libsoup-2.4 glib-2.0 itstool-native geocode-glib glib-2.0-native"
 
+WARN_QA_remove = "unknown-configure-option"
+
 FILES_${PN} += "${datadir}/glib-2.0/schemas"
 
 GNOMEBASEBUILDCLASS = "meson"

@@ -10,6 +10,8 @@ SRC_URI[archive.sha256sum] = "ab8fa07613aa6b92be6151b1e2063cad5349bc1a8314eb091a
 
 DEPENDS = "glib-2.0 glib-2.0-native gtk+3 libcanberra libnotify libxml2-native gobject-introspection"
 
+WARN_QA_remove = "unknown-configure-option"
+
 GNOMEBASEBUILDCLASS = "meson"
 inherit gnomebase gobject-introspection gettext
 FILES_${PN} += "${datadir}/icons"

@@ -5,6 +5,8 @@ GNOMEBASEBUILDCLASS = "meson"
 
 inherit gnomebase gobject-introspection gettext
 
+WARN_QA_remove = "unknown-configure-option"
+
 SRC_URI[archive.md5sum] = "059529c91a3d84e6542f662be47a657f"
 SRC_URI[archive.sha256sum] = "0874ded4498e960b264baa54b6407a5a75dac54fc5b7cd60db91133e9c0260dd"
 

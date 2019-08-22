@@ -5,6 +5,8 @@ LIC_FILES_CHKSUM = "file://LICENSE;md5=d32239bcb673463ab874e80d47fae504"
 GNOMEBASEBUILDCLASS = "meson"
 inherit gnomebase gobject-introspection gettext vala
 
+WARN_QA_remove = "unknown-configure-option"
+
 SRC_URI += "file://0001-Added-machine-tags.patch"
 
 DEPENDS = "glib-2.0 glib-2.0-native gtk+3 gobject-introspection libgtop"

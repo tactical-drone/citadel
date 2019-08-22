@@ -7,6 +7,8 @@ LIC_FILES_CHKSUM = "file://COPYING;md5=beb29cf17fabe736f0639b09ee6e76fa \
 
 inherit gnomebase gettext gobject-introspection
 
+WARN_QA_remove = "unknown-configure-option"
+
 export GI_DATADIR="${STAGING_DATADIR}/gobject-introspection-1.0"
 
 DEPENDS = "glib-2.0 gobject-introspection cairo gtk+3 mozjs glib-2.0-native"

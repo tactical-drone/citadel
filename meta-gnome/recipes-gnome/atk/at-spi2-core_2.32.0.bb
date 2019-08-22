@@ -20,14 +20,11 @@ REQUIRED_DISTRO_FEATURES = "x11"
 EXTRA_OEMESON = " -Dsystemd_user_dir=${systemd_user_unitdir} \
                   -Ddbus_daemon=${bindir}/dbus-daemon"
 
-GTKDOC_ENABLE_FLAG = "-Denable_docs=true"
-GTKDOC_DISABLE_FLAG = "-Denable_docs=false"
+GTKDOC_ENABLE_FLAG = "-Ddocs=true"
+GTKDOC_DISABLE_FLAG = "-Ddocs=false"
 
-GI_ENABLE_FLAG = "-Denable-introspection=yes"
-GI_DISABLE_FLAG = "-Denable-introspection=no"
-
-EXTRA_OEMESON_append_class-target = " ${@bb.utils.contains('GI_DATA_ENABLED', 'True', '${GI_ENABLE_FLAG}', \
-                                                                                       '${GI_DISABLE_FLAG}', d)} "
+GIR_MESON_ENABLE_FLAG = 'yes'
+GIR_MESON_DISABLE_FLAG = 'no'
 
 EXTRA_OEMESON_append_class-target = " ${@bb.utils.contains('GTKDOC_ENABLED', 'True', '${GTKDOC_ENABLE_FLAG}', \
                                                                                      '${GTKDOC_DISABLE_FLAG}', d)} "

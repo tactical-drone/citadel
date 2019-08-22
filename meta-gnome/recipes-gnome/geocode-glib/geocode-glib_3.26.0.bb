@@ -12,6 +12,10 @@ SRC_URI[archive.sha256sum] = "ea4086b127050250c158beff28dbcdf81a797b3938bb79bbaa
 
 FILES_${PN} += "${datadir}/icons/gnome"
 
+GIR_MESON_OPTION = 'enable-introspection'
+GIR_MESON_ENABLE_FLAG = 'true'
+GIR_MESON_DISABLE_FLAG = 'false'
+
 DEPENDS = "json-glib libsoup-2.4 glib-2.0 glib-2.0-native"
 EXTRA_OEMESON = "-Denable-installed-tests=false -Denable-gtk-doc=false --buildtype=release"
 

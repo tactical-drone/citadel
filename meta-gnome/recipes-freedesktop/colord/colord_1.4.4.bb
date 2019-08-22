@@ -8,8 +8,9 @@ SRC_URI = "https://www.freedesktop.org/software/colord/releases/colord-${PV}.tar
 SRC_URI[md5sum] = "32c2709a6002d9ee750483aaed6379c8"
 SRC_URI[sha256sum] = "9a0fe80160bf88efddb582a9fc0169f56065276dc3882c47dddb9eecd048c0a5"
 
-#inherit meson meson-exe-wrapper pkgconfig systemd useradd gettext gobject-introspection
 inherit python3native meson meson-exe-wrapper pkgconfig systemd useradd gettext gobject-introspection
+
+WARN_QA_remove = "unknown-configure-option"
 
 DEPENDS = "glib-2.0-native lcms libgusb libgudev polkit"
 EXTRA_OEMESON = "-Dargyllcms_sensor=false -Dman=false -Ddocs=false -Ddaemon_user=colord -Dbash_completion=false -Dtests=false --buildtype=release"

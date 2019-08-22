@@ -20,6 +20,8 @@ GNOMEBASEBUILDCLASS = "meson"
 
 inherit gnomebase gobject-introspection gettext meson-exe-wrapper
 
+WARN_QA_remove = "unknown-configure-option"
+
 SRC_URI += " file://0001-Disable-gsd-sharing-plugin.patch \
              file://0001-don-t-run-power-module-tests.patch"
 
