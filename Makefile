@@ -10,7 +10,6 @@ undefine DOCKER_RUN
 undefine DOCKER_RUN_PRIV
 endif
 
-REALMFS_IMAGE = build/realmfs/citadel-realmfs.ext4
 INSTALLER_IMAGE = build/images/citadel-installer.img
 
 #
@@ -20,7 +19,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) \
 	| awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
-installer: ${REALMFS_IMAGE} ## Build citadel installer image (This will build everything)
+installer: ## Build citadel installer image (This will build everything)
 	$(DOCKER_RUN) bash -c "source setup-build-env && bitbake --continue citadel-installer-image"
 	@echo "Installer image:"
 	@ls -l $(INSTALLER_IMAGE)
