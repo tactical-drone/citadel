@@ -1,7 +1,7 @@
 DESCRIPTION = "Resource image containing citadel kernel and kernel modules"
 LICENSE = "MIT"
 
-PACKAGE_INSTALL = "kernel-modules"
+PACKAGE_INSTALL = "kernel-modules citadel-kernel-headers"
 
 CITADEL_IMAGE_VERSION = "${CITADEL_IMAGE_VERSION_kernel}"
 CITADEL_IMAGE_TYPE = "kernel"

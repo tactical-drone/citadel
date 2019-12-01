@@ -1,6 +1,6 @@
 info "Setting up apt-cacher-ng"
 
-apt-get --assume-no install apt-cacher-ng
+apt-get --assume-yes install apt-cacher-ng
 systemctl -q disable apt-cacher-ng.service
 
 #

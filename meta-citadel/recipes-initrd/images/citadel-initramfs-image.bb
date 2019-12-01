@@ -94,6 +94,21 @@ PACKAGE_INSTALL = "\
     kernel-module-soundcore \
     kernel-module-wmi \
     kernel-module-xhci-plat-hcd \
+    kernel-module-vboxvideo \
+    kernel-module-drm \
+    kernel-module-drm-kms-helper \
+    kernel-module-uvesafb \
+    kernel-module-hv-balloon \
+    kernel-module-hv-netvsc \
+    kernel-module-hv-sock \
+    kernel-module-hv-storvsc \
+    kernel-module-hv-utils \
+    kernel-module-hv-vmbus \
+    kernel-module-hid-hyperv \
+    kernel-module-hyperv-fb \
+    kernel-module-hyperv-keyboard \
+    kernel-module-pci-hyperv \
+    kernel-module-fb-sys-fops \
     liberation-fonts \
     util-linux-fsck \
     util-linux-lsblk \

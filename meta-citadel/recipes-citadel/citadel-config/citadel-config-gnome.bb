@@ -10,6 +10,7 @@ S = "${WORKDIR}"
 SRC_URI = "\
     file://gsettings/90_citadel.gschema.override \
     file://dconf/build.d/initial-realm-dconf.conf \
+    file://xorg/30-hyperv.conf \
 "
 
 inherit allarch gsettings
@@ -23,9 +24,12 @@ do_compile() {
 do_install() {
     install -d ${D}${datadir}/glib-2.0/schemas
     install -d ${D}${sysconfdir}/skel/.config/dconf
+    install -d ${D}/usr/share/X11/xorg.conf.d
 
     install -m 644 ${S}/gsettings/90_citadel.gschema.override ${D}${datadir}/glib-2.0/schemas
     install -m 644 ${WORKDIR}/dconf-output/user ${D}${sysconfdir}/skel/.config/dconf
+    #install -m 644 ${S}/xorg/30-hyperv.conf ${D}/usr/share/X11/xorg.conf.d
+    ln -s /home/citadel/hyperv.conf ${D}/usr/share/X11/xorg.conf.d/30-hyperv.conf
 }
 
 FILES_${PN} = "/"
