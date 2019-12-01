@@ -57,9 +57,5 @@ kernel-test: ## Boot kernel with Qemu ('ctrl-a x' to exit qemu)
 install-build-deps:
 	sudo apt install --no-install-recommends build-essential python bzip2 cpio chrpath diffstat file texinfo inkscape libgmp-dev libmpc-dev libelf-dev gawk wget debootstrap
 
-$(REALMFS_IMAGE):
-	@mkdir -p build/realmfs
-	$(DOCKER_RUN_PRIV) bash -c 'sudo REALMFS_BUILDER_BASE=$${PWD}/realmfs-builder realmfs-builder/stage-one.sh --no-confirm -i -d build/realmfs'
-
-$(INSTALLER_IMAGE): $(REALMFS_IMAGE)
+$(INSTALLER_IMAGE):
 	$(DOCKER_RUN) bash -c "source setup-build-env && bitbake citadel-installer-image"
