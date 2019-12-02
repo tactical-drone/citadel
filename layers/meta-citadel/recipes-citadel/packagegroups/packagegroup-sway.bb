@@ -10,6 +10,7 @@ RDEPENDS_${PN} = "\
     swaylock \
     grim \
     slurp \
-    polkit-gnome \
 "
 
+
+#DEPRICATED polkit-gnome 

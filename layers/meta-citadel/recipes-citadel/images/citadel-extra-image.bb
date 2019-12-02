@@ -6,7 +6,6 @@ PACKAGE_INSTALL = "\
     linux-firmware \
     adapta-gtk-theme \
     paper-icon-theme \
-    gnome-backgrounds \
     base16-vim \
     adwaita-icon-theme \
     adwaita-icon-theme-cursors \
@@ -14,6 +13,8 @@ PACKAGE_INSTALL = "\
     adwaita-icon-theme-symbolic \
     adwaita-icon-theme-symbolic-hires \
 "
+#DEPRICATED    gnome-backgrounds 
+
 CITADEL_IMAGE_VERSION = "${CITADEL_IMAGE_VERSION_extra}"
 CITADEL_IMAGE_TYPE = "extra"
 

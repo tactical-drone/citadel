@@ -9,9 +9,10 @@ BBLAYERS ?= " \
   ##OEROOT##/meta \
   ##OEROOT##/../layers/meta-intel \
   ##OEROOT##/../layers/meta-rust \
-  ##OEROOT##/../layers/meta-citadel \
+  ##OEROOT##/../layers/meta-openembedded/meta-initramfs \
   ##OEROOT##/../layers/meta-openembedded/meta-oe \
   ##OEROOT##/../layers/meta-openembedded/meta-python \
   ##OEROOT##/../layers/meta-openembedded/meta-networking \
   ##OEROOT##/../layers/meta-openembedded/meta-gnome \
+  ##OEROOT##/../layers/meta-citadel \
   "
