@@ -13,7 +13,7 @@ inherit allarch gsettings
 
 # Build the binary dconf database which is installed by default into each new realm
 
-do_compile {
+do_compile() {
 	oe_runmake BASE_DIR=${S} REALMFS_IMAGE=${CITADEL_REALMFS_EXT4}
 }
 

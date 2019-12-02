@@ -1,3 +1,12 @@
 [submodule "poky"]
 	path = poky
 	url = https://git.yoctoproject.org/git/poky
+[submodule "layers/meta-intel"]
+	path = layers/meta-intel
+	url = git://git.yoctoproject.org/meta-intel
+[submodule "layers/meta-rust"]
+	path = layers/meta-rust
+	url = git@github.com:tactical-drone/meta-rust.git
+[submodule "layers/meta-openembedded"]
+	path = layers/meta-openembedded
+	url = git://git.openembedded.org/meta-openembedded

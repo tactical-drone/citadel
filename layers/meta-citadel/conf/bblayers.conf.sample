@@ -7,8 +7,11 @@ BBFILES ?= ""
 
 BBLAYERS ?= " \
   ##OEROOT##/meta \
-  ##OEROOT##/../meta-intel \
-  ##OEROOT##/../meta-rust \
-  ##OEROOT##/../meta-citadel \
-  ##OEROOT##/../meta-gnome \
+  ##OEROOT##/../layers/meta-intel \
+  ##OEROOT##/../layers/meta-rust \
+  ##OEROOT##/../layers/meta-citadel \
+  ##OEROOT##/../layers/meta-openembedded/meta-oe \
+  ##OEROOT##/../layers/meta-openembedded/meta-python \
+  ##OEROOT##/../layers/meta-openembedded/meta-networking \
+  ##OEROOT##/../layers/meta-openembedded/meta-gnome \
   "
