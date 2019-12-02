@@ -13,27 +13,37 @@ SRC_URI = "\
     file://citadel-realmfs-builder.tar.gz \
 "
 
-inherit allarch gsettings
+BBCLASSEXTEND = "native"
 
-# Build the binary dconf database which is installed by default into each new realm
+#inherit allarch
 
-addtask do_root_clean
+addtask do_rootclean
+addtask do_force_root_clean
 
-do_clean[depends] = "citadel-realmfs-builder:do_root_clean"
+do_clean[depends] = "citadel-realmfs-builder:do_rootclean"
+do_force_root_clean[depends] = "citadel-realmfs-builder:do_patch"
 
 do_compile() {
-    oe_runmake ${CITADEL_REALMFS_EXT4} REALMFS_IMAGE=${CITADEL_REALMFS_EXT4}
+    bbnote "Building image of size ${CITADEL_REALMFS_SIZE_MB} Mb"
+    oe_runmake ${CITADEL_REALMFS_EXT4} REALMFS_IMAGE=${CITADEL_REALMFS_EXT4} REALMFS_SIZE_MB=${CITADEL_REALMFS_SIZE_MB}
 }
 
 do_install() {
-    install -d ${D}realmfs
+    install -d ${D}/realmfs
 
-    install -m 644 ${S}/build/${CITADEL_REALMFS_EXT4} ${D}realmfs
+    install -m 644 ${S}/build/realmfs/${CITADEL_REALMFS_EXT4} ${D}/realmfs
 }
 
-do_root_clean(){
-    cd ${S}
-    oe_runmake clean
+do_force_root_clean(){
+    do_rootclean
+}
+
+do_rootclean(){
+    if [ -d ${S} ]
+    then
+        cd ${S}
+	if [ -e Makefile ]; then oe_runmake clean; fi
+    fi
 }
 
 

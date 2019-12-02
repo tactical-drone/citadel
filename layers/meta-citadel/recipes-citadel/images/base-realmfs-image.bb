@@ -1,7 +1,7 @@
 DESCRIPTION = "Base RealmFS image"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
-DEPENDS = "citadel-tools-native cryptsetup-native citadel-realmfs-builder"
+DEPENDS = "citadel-tools-native cryptsetup-native citadel-realmfs-builder-native"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
