@@ -37,8 +37,6 @@ do_root_shell_clean() {
 do_clean_prepend () {
     bb.note("Cleaning root files")
     bb.build.exec_func("do_root_shell_clean", d)
-    #bb.build.exec_func("do_rootclean", d)
 }
 
-#FILES_${PN} = "/realmfs/${CITADEL_REALMFS_EXT4}"
 SYSROOT_DIRS_NATIVE += "${STAGING_DIR_NATIVE}/realmfs"
