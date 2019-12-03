@@ -8,7 +8,8 @@ PACKAGE_ARCH = "${MACHINE_ARCH}"
 inherit deploy
 require citadel-image.inc
 
-REALMFS_DIR = "${SYSROOT}/realmfs"
+REALMFS_DIR = "${STAGING_DIR_NATIVE}/realmfs"
+
 CITADEL_IMAGE_VERSION = "1"
 do_realmfs_mkimage() {
     cat > ${B}/mkimage.conf << EOF
@@ -40,7 +41,7 @@ do_patch[noexec] = "1"
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 do_install[noexec] = "1"
-deltask do_populate_sysroot
+#deltask do_populate_sysroot
 do_package[noexec] = "1"
 deltask do_package_qa
 do_packagedata[noexec] = "1"
