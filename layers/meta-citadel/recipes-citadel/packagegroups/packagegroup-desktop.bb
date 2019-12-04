@@ -12,9 +12,6 @@ RDEPENDS_${PN} = "\
     ${CITADEL_POWERTOP} \
     accountsservice \
     upower \
-    colord \
-    colord-plugins \
-    gdm \
     plymouth \
     shared-mime-info \
     pulseaudio-server \
@@ -37,12 +34,17 @@ RDEPENDS_${PN} = "\
     gconf \
     gcr \
     dconf \
-    ibus \
     libsecret \
-    libwacom \
     libcroco \
     librsvg \
     librsvg-gtk \
     glib-2.0-utils \
     xdg-dbus-proxy \
 "
+
+#    libwacom 
+#    ibus 
+#    colord 
+#    colord-plugins 
+#    gdm 
+

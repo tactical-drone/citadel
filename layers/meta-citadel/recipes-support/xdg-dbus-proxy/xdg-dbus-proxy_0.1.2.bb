@@ -9,7 +9,7 @@ DEPENDS = "autoconf-archive-native glib-2.0"
 
 inherit autotools gnomebase
 
-SRCREV = "7531b44424f834f193fe7f83fe572084d9c77ad9"
+SRCREV = "${PV}"
 SRC_URI = "git://github.com/flatpak/xdg-dbus-proxy.git;protocol=https" 
 S = "${WORKDIR}/git"
 
