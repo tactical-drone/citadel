@@ -25,7 +25,7 @@ do_rootfs[depends] += "\
     citadel-rootfs-image:do_image_complete \
     citadel-extra-image:do_image_complete \
     citadel-kernel-image:do_image_complete \
-    base-realmfs-image:do_deploy \
+    citadel-realmfs:do_deploy \
     citadel-kernel:do_deploy \
     systemd-boot:do_deploy \
 "
@@ -56,7 +56,7 @@ install_image_files() {
     install_resource_image "rootfs" ${CITADEL_IMAGE_VERSION_rootfs}
     install_resource_image "extra" ${CITADEL_IMAGE_VERSION_extra}
     install_resource_image "kernel" ${CITADEL_IMAGE_VERSION_kernel}
-    install ${DEPLOY_DIR_IMAGE}/base-realmfs.img ${IMAGE_ROOTFS}/images/
+    install_resource_image "realmfs" ${CITADEL_IMAGE_VERSION_realmfs}
 }
 
 make_loader_conf() {

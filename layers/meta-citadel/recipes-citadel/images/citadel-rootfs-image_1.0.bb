@@ -51,17 +51,17 @@ setup_var() {
     mv ${IMAGE_ROOTFS}/home/citadel ${IMAGE_ROOTFS}/usr/share/factory/home
     mv ${IMAGE_ROOTFS}/home/root ${IMAGE_ROOTFS}/usr/share/factory/home
 
-    rm ${IMAGE_ROOTFS}/usr/share/gnome-shell/gnome-shell-theme.gresource
-    ln -sf /opt/share/themes/Adapta-Eta/gnome-shell/gnome-shell-theme.gresource ${IMAGE_ROOTFS}/usr/share/gnome-shell/gnome-shell-theme.gresource
+    #rm ${IMAGE_ROOTFS}/usr/share/gnome-shell/gnome-shell-theme.gresource
+    #ln -sf /opt/share/themes/Adapta-Eta/gnome-shell/gnome-shell-theme.gresource ${IMAGE_ROOTFS}/usr/share/gnome-shell/gnome-shell-theme.gresource
 
-    ln -sf /opt/share/themes/Adapta ${IMAGE_ROOTFS}/usr/share/themes/Adapta
-    ln -sf /opt/share/themes/Adapta-Eta ${IMAGE_ROOTFS}/usr/share/themes/Adapta-Eta
-    ln -sf /opt/share/themes/Adapta-Nokto ${IMAGE_ROOTFS}/usr/share/themes/Adapta-Nokto
-    ln -sf /opt/share/themes/Adapta-Nokto-Eta ${IMAGE_ROOTFS}/usr/share/themes/Adapta-Nokto-Eta
-    ln -sf /opt/share/icons/Paper ${IMAGE_ROOTFS}/usr/share/icons/Paper
-    ln -sf /opt/share/icons/Adwaita ${IMAGE_ROOTFS}/usr/share/icons/Adwaita
-    ln -sf /opt/share/backgrounds/gnome ${IMAGE_ROOTFS}/usr/share/backgrounds/gnome
-    ln -sf /opt/share/gnome-background-properties ${IMAGE_ROOTFS}/usr/share/gnome-background-properties
+    #ln -sf /opt/share/themes/Adapta ${IMAGE_ROOTFS}/usr/share/themes/Adapta
+    #ln -sf /opt/share/themes/Adapta-Eta ${IMAGE_ROOTFS}/usr/share/themes/Adapta-Eta
+    #ln -sf /opt/share/themes/Adapta-Nokto ${IMAGE_ROOTFS}/usr/share/themes/Adapta-Nokto
+    #ln -sf /opt/share/themes/Adapta-Nokto-Eta ${IMAGE_ROOTFS}/usr/share/themes/Adapta-Nokto-Eta
+    #ln -sf /opt/share/icons/Paper ${IMAGE_ROOTFS}/usr/share/icons/Paper
+    #ln -sf /opt/share/icons/Adwaita ${IMAGE_ROOTFS}/usr/share/icons/Adwaita
+    #ln -sf /opt/share/backgrounds/gnome ${IMAGE_ROOTFS}/usr/share/backgrounds/gnome
+    #ln -sf /opt/share/gnome-background-properties ${IMAGE_ROOTFS}/usr/share/gnome-background-properties
 
     # do_rootfs() will fail otherwise
     ln -sf ../usr/share/factory/var/lib ${IMAGE_ROOTFS}/var/lib

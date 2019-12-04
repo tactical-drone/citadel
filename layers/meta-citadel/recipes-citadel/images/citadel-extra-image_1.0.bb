@@ -21,6 +21,8 @@ CITADEL_IMAGE_TYPE = "extra"
 require citadel-image.inc
 inherit citadel-image
 
+addtask do_deploy before do_build
+
 ROOTFS_POSTPROCESS_COMMAND += "write_manifest_file; "
 
 write_manifest_file() {
