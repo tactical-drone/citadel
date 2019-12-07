@@ -4,7 +4,7 @@ LICENSE = "MIT"
 
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
-ROOTFS_POSTPROCESS_COMMAND += "set_disable_root_password; symlink_lib64; setup_var; append_os_release;"
+ROOTFS_POSTPROCESS_COMMAND += "set_disable_root_password; set_citadel_user_password;  symlink_lib64; setup_var; append_os_release;"
 
 IMAGE_INSTALL += "\
     packagegroup-citadel-base \
