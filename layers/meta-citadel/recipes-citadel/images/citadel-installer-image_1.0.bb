@@ -101,6 +101,9 @@ install_resource_image() {
         kversion=$(cat ${DEPLOY_DIR_IMAGE}/kernel.version)
         src_fname="citadel-kernel-${kversion}-${CITADEL_IMAGE_CHANNEL}-${version}.img"
         dst_fname="citadel-kernel-${kversion}.img"
+    elif [ "${1}" = "realmfs" ]; then
+        src_fname="citadel-${1}-${CITADEL_IMAGE_CHANNEL}-${version}.img"
+        dst_fname="base-${1}.img"
     else
         src_fname="citadel-${1}-${CITADEL_IMAGE_CHANNEL}-${version}.img"
         dst_fname="citadel-${1}.img"
