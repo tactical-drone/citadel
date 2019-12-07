@@ -113,7 +113,7 @@ INITRAMFS_MAXSIZE = "512000"
 
 INITRAMFS_FSTYPES = "cpio.lz4"
 IMAGE_FSTYPES = "${INITRAMFS_FSTYPES}"
-inherit core-image-zeus
+inherit core-image
 require ${THISDIR}/../../recipes-citadel/images/citadel-image.inc
 
 IMAGE_ROOTFS_SIZE = "8192"
