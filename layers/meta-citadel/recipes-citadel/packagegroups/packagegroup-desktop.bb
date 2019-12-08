@@ -40,6 +40,8 @@ RDEPENDS_${PN} = "\
     librsvg-gtk \
     glib-2.0-utils \
     xdg-dbus-proxy \
+    xf86-video-vmware \
+    xf86-video-fbdev \
 "
 
 #    libwacom 
