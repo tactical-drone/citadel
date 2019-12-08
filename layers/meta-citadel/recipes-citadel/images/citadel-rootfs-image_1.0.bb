@@ -4,7 +4,7 @@ LICENSE = "MIT"
 
 SYSTEMD_DEFAULT_TARGET = "graphical.target"
 
-ROOTFS_POSTPROCESS_COMMAND += "set_disable_root_password; set_citadel_user_password;  symlink_lib64; setup_var; append_os_release;"
+ROOTFS_POSTPROCESS_COMMAND += "set_disable_root_password; set_citadel_user_password;  symlink_lib64; setup_var; append_os_release; set_disable_fq_codel;"
 
 IMAGE_INSTALL += "\
     packagegroup-citadel-base \
@@ -28,6 +28,10 @@ set_citadel_user_password() {
 
 set_disable_root_password() {
     sed -i 's%^root::%root:!:%' ${IMAGE_ROOTFS}/etc/shadow
+}
+
+set_disable_fq_codel() {
+    sed -i 's%fq_codel%#&%' ${IMAGE_ROOTFS}/lib/sysctl.d/50-default.conf
 }
 
 setup_var() {
